@@ -1,0 +1,109 @@
+<form>
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card" ngDraggable>
+        <div class="card-header">
+          <strong>Add New Credit Savings Unit</strong>
+        </div>
+        <div class="card-body">
+          <div class="form-group-sm row">
+            <label for="branch" class="col-sm-2 col-form-label-sm">Branch</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control form-control-sm" id="" placeholder="Enter Branch" [(ngModel)]="model.branch" name="name">
+            </div>
+          </div>
+          <div class="form-group-sm row">
+            <label for="name" class="col-sm-2 col-form-label-sm">Name</label>
+            <div class="col-sm-10">
+              <input type="text" (keytab)="keytab($e)" class="form-control form-control-sm" id="" placeholder="Enter Name" [(ngModel)]="model.name" name="name">
+            </div>
+          </div>
+          <div class="form-group-sm row">
+            <label for="leader" class="col-sm-2 col-form-label-sm">Leader</label>
+            <div class="col-sm-10">
+              <input type="text" (keytab)="keytab($e)" [(ngModel)]="model.leader" class="form-control form-control-sm" id="" placeholder="Enter Leader" name="leader">
+            </div>
+          </div>
+          <div class="form-group-sm row">
+              <label for="day" class="col-md-2 col-form-label-sm">Day</label>
+              <div class="col-sm-10">
+                <input type="text" [(ngModel)]="model.day" class="form-control form-control-sm" id="" placeholder="Enter day" name="day">
+              </div>
+          </div>
+          <div class="form-group-sm row">
+            <label for="address" class="col-sm-2 col-form-label-sm">Address</label>
+            <div class="col-sm-10">
+              <input type="text" [(ngModel)]="model.address" class="form-control form-control-sm" id="" placeholder="Enter Address" name="address">
+            </div>
+          </div>
+          <div class="form-group-sm row">
+            <label for="address" class="col-sm-2 col-form-label-sm">Tel. No.</label>
+            <div class="col-sm-10">
+              <input type="text" [(ngModel)]="model.telephone" class="form-control form-control-sm" id="" placeholder="Enter Telephone" name="telephone">
+            </div>
+          </div>
+          <div class="form-group-sm row">
+            <label for="status" class="col-md-2 col-form-label-sm">Status</label>
+            <div class="col-sm-10">
+              <input type="text" [(ngModel)]="model.status" class="form-control form-control-sm" id="" placeholder="Enter status" name="status">
+            </div>
+          </div>
+          <div class="form-group-sm row">
+            <label for="employee" class="col-sm-2 col-form-label-sm">Empl.</label>
+            <div class="col-sm-10">
+              <input type="text" [(ngModel)]="model.employee" class="form-control form-control-sm" id="" placeholder="Enter Employee" name="employee">
+            </div>
+          </div>
+          <div class="form-group-sm row">
+              <label for="Executive" class="col-sm-2 col-form-label-sm">Remarks</label>
+              <div class="col-sm-10">
+                <textarea [(ngModel)]="model.remark" class="form-control form-control-sm" id="" placeholder="Enter Remarks" name="remark"></textarea>
+              </div>
+            </div>
+        </div>
+        <div class="card-footer">
+          <div align="end">
+          <button type="button" (click)="addEmployee()" class="btn btn-sm btn-primary col-sm-2"><i class="fa fa-dot-circle-o"></i> Save</button>
+          <button type="reset" class="btn btn-sm btn-danger col-sm-2"><i class="fa fa-ban"></i> Clear</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card" ngDraggable>
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i><strong>Credit Savings Units List</strong>
+            <i class="cui-chevron-bottom icons" *ngIf="isCollapsed" (click)="isCollapsed = !isCollapsed"></i>
+            <i class="cui-chevron-top icons" *ngIf="!isCollapsed" (click)="isCollapsed = !isCollapsed"></i>
+          </div>
+          <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsed" >
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Code</th>
+                  <th>Name</th>
+                  <th>Leader</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+</form>
